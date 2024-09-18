@@ -25,6 +25,7 @@ public class Shooting : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log("Hit");
                 hit.transform.gameObject.GetComponent<IDamageable>()?.TakeDamage(2);
             }
         }

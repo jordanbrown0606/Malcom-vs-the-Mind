@@ -4,38 +4,52 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private float _maxForce;
-    [SerializeField] private Vector2 _move;
-    private Rigidbody _rb;
+
+
+    CharacterController controller;
+
+    public float speed;
+
+    public Transform cam;
+
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+
+        controller = GetComponent<CharacterController>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void Update()
     {
-        transform.rotation = Camera.main.transform.rotation;
-        _move.x = Input.GetAxis("Horizontal");
-        _move.y = Input.GetAxis("Vertical");
 
-        Vector3 currentVelocity = _rb.velocity;
-        Vector3 targetVelocity = new Vector3(_move.x, 0, _move.y) * _speed;
+        float Horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-        targetVelocity = transform.TransformDirection(targetVelocity);
+        Vector3 Movement = cam.transform.right * Horizontal + cam.transform.forward * Vertical;
+        Movement.y = 0f;
 
-        Vector3 velocityChange = (targetVelocity - new Vector3(currentVelocity.x, 0, currentVelocity.z));
-        Vector3.ClampMagnitude(velocityChange, _maxForce);
 
-        _rb.AddForce(new Vector3(velocityChange.x, 0, velocityChange.z), ForceMode.VelocityChange);
 
-        //Vector3 offset = new Vector3(horizontal, 0, vertical);
-        //transform.position += offset * speed * Time.deltaTime;
+        controller.Move(Movement);
+
+        if (Movement.magnitude != 0f)
+        {
+            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * cam.GetComponent<CameraMovement>().sensivity * Time.deltaTime);
+
+
+            Quaternion CamRotation = cam.rotation;
+            CamRotation.x = 0f;
+            CamRotation.z = 0f;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, CamRotation, 0.1f);
+
+        }
     }
 
 }
