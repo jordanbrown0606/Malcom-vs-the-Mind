@@ -428,10 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e190dddd525b4b0438c3ab8cc0b5550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 1381451920}
-  Player: {fileID: 1381451920}
+  _lookAt: {fileID: 1381451920}
   distance: 10
-  sensivity: 20
+  sensivity: 300
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
