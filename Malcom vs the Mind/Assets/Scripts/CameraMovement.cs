@@ -11,6 +11,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _lookAt;
 
     [SerializeField] private float distance = 10.0f;
+
+    [SerializeField] private Transform _shootPosition;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
     public float sensivity;
@@ -29,6 +31,11 @@ public class CameraMovement : MonoBehaviour
         transform.position = _lookAt.position + rotation * Direction;
 
         transform.LookAt(_lookAt.position);
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            _lookAt = _shootPosition;
+        }
 
 
 
