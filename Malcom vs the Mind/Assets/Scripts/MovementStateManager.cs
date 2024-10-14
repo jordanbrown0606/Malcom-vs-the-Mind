@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class MovementStateManager : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    #region Movement
+    [HideInInspector] public float hzInput, vInput;
+    [HideInInspector] public Vector3 direction;
+    private CharacterController _controller;
+    public float currentMoveSpeed;
+    public float walkSpeed, walkBackSpeed;
+    public float runSpeed, runBackSpeed;
+    public float crouchSpeed, crouchBackSpeed;
+    #endregion
+
+    #region Gravity
+    [SerializeField] private float _gravity = -9.81f;
+    private Vector3 _velocity;
+    #endregion
+
+    #region GroundCheck
     [SerializeField] private float _groundOffset;
     [SerializeField] private LayerMask _groundMask;
-    [SerializeField] private float _gravity = -9.81f;
-
-    private Vector3 _direction;
     private Vector3 _spherePos;
-    private Vector3 _velocity;
-    private float _hzInput, _vInput;
-    private CharacterController _controller;
+    #endregion
+
+    MovementStateBase currState;
+
+    public IdleState Idle = new IdleState();
+    public WalkState Walk = new WalkState();
+    public CrouchState Crouch = new CrouchState();
+    public RunState Run = new RunState();
+
+    [HideInInspector] public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         _controller = GetComponent<CharacterController>();
+        SwitchState(Idle);
     }
 
     // Update is called once per frame
@@ -26,16 +47,27 @@ public class MovementStateManager : MonoBehaviour
     {
         DirectionAndMove();
         Gravity();
+
+        anim.SetFloat("hzInput", hzInput);
+        anim.SetFloat("vInput", vInput);
+
+        currState.UpdateState(this);
+    }
+
+    public void SwitchState(MovementStateBase state)
+    {
+        currState = state;
+        currState.EnterState(this);
     }
 
     private void DirectionAndMove()
     {
-        _hzInput = Input.GetAxis("Horizontal");
-        _vInput = Input.GetAxis("Vertical");
+        hzInput = Input.GetAxis("Horizontal");
+        vInput = Input.GetAxis("Vertical");
 
-        _direction = transform.forward * _vInput + transform.right * _hzInput;
+        direction = transform.forward * vInput + transform.right * hzInput;
 
-        _controller.Move(_direction * _speed * Time.deltaTime);
+        _controller.Move(direction.normalized * currentMoveSpeed * Time.deltaTime);
     }
 
     private bool isGrounded()
