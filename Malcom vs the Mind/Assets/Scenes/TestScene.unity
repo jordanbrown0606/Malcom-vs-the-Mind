@@ -763,14 +763,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2237125956891005714, guid: 20c6b0cccfcd5e944b2b4e89827cadc0, type: 3}
-      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
-      value: 
-      objectReference: {fileID: 1212766751}
-    - target: {fileID: 2819665662507217160, guid: 20c6b0cccfcd5e944b2b4e89827cadc0, type: 3}
-      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
-      value: 
-      objectReference: {fileID: 1212766751}
     - target: {fileID: 3148886523352289435, guid: 20c6b0cccfcd5e944b2b4e89827cadc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -819,10 +811,10 @@ PrefabInstance:
       propertyPath: aimPos
       value: 
       objectReference: {fileID: 1212766751}
-    - target: {fileID: 8234853554845662420, guid: 20c6b0cccfcd5e944b2b4e89827cadc0, type: 3}
-      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
+    - target: {fileID: 8791886451650596743, guid: 20c6b0cccfcd5e944b2b4e89827cadc0, type: 3}
+      propertyPath: m_RigLayers.Array.data[0].m_Rig
       value: 
-      objectReference: {fileID: 1212766751}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
