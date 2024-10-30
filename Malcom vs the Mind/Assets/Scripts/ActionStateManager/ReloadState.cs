@@ -6,11 +6,12 @@ public class ReloadState : ActionBaseState
 {
     public override void EnterState(ActionStateManager actions)
     {
-        throw new System.NotImplementedException();
+        actions.leftHandIK.weight = 0f;
+        actions.anim.SetTrigger("Reload");
     }
 
     public override void UpdateState(ActionStateManager actions)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

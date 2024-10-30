@@ -18,8 +18,8 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] AudioClip _gunShot;
     AudioSource _audioSource;
-
     WeaponAmmo _ammo;
+    ActionStateManager _actions;
 
 
 
@@ -30,6 +30,7 @@ public class WeaponManager : MonoBehaviour
         _fireRateTimer = _fireRate;
         _aim = GetComponentInParent<AimStateManager>();
         _ammo = GetComponent<WeaponAmmo>();
+        _actions = GetComponentInParent<ActionStateManager>();
     }
 
     // Update is called once per frame
@@ -46,8 +47,16 @@ public class WeaponManager : MonoBehaviour
         {
             return false;
         }
-        
-        if( _semiAuto && Input.GetKeyDown(KeyCode.Mouse0))
+        if (_ammo.curAmmo == 0)
+        {
+            return false;
+        }
+        if(_actions.currentState == _actions.Reload)
+        {
+            return false;
+        }
+
+        if ( _semiAuto && Input.GetKeyDown(KeyCode.Mouse0))
         {
             return true;
         }
@@ -56,10 +65,6 @@ public class WeaponManager : MonoBehaviour
             return true;
         }
 
-        if(_ammo.curAmmo == 0)
-        {
-            return false;
-        }
         return false;
     }
 

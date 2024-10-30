@@ -8,6 +8,10 @@ public class WeaponAmmo : MonoBehaviour
     public int extraAmmo;
     [HideInInspector] public int curAmmo;
 
+    public AudioClip magInSound;
+    public AudioClip magOutSound;
+    public AudioClip chargingHandleSound;
+
     // Start is called before the first frame update
     void Start()
     {
