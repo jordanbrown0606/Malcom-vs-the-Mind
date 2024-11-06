@@ -6,7 +6,6 @@ public class ReloadState : ActionBaseState
 {
     public override void EnterState(ActionStateManager actions)
     {
-        actions.leftHandIK.weight = 0f;
         actions.anim.SetTrigger("Reload");
     }
 

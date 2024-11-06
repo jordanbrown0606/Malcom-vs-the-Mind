@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 public class ActionStateManager : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class ActionStateManager : MonoBehaviour
     AudioSource _audioSource;
 
     [HideInInspector] public Animator anim;
-
-    public TwoBoneIKConstraint leftHandIK;
 
     // Start is called before the first frame update
     void Start()

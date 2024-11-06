@@ -6,12 +6,11 @@ public class DefaultState : ActionBaseState
 {
     public override void EnterState(ActionStateManager actions)
     {
-        actions.leftHandIK.weight = 1.0f;
+        
     }
 
     public override void UpdateState(ActionStateManager actions)
     {
-        actions.leftHandIK.weight = Mathf.Lerp(actions.leftHandIK.weight, 1, 10 * Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.R) && CanReload(actions))
         {
