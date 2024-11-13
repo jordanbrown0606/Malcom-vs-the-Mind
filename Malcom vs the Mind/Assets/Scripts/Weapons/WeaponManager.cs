@@ -17,6 +17,7 @@ public class WeaponManager : MonoBehaviour
     AimStateManager _aim;
 
     [SerializeField] AudioClip _gunShot;
+    [SerializeField] private LayerMask _layerMask;
     AudioSource _audioSource;
     WeaponAmmo _ammo;
     ActionStateManager _actions;
@@ -84,7 +85,7 @@ public class WeaponManager : MonoBehaviour
         Camera camera = Camera.main;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _layerMask))
         {
             Debug.Log(hit.transform.gameObject.name);
             hit.transform.gameObject.GetComponent<IDamageable>()?.TakeDamage(2);
