@@ -131,6 +131,7 @@ public class Agent : MonoBehaviour, IDamageable
     {
         if(other.gameObject.tag != "Player")
         {
+            Debug.Log("Not Player");
             return;
         }
 
@@ -189,7 +190,6 @@ public class Agent : MonoBehaviour, IDamageable
 
         if (Physics.Raycast(GetSensorPosition, direction.normalized, out hit, GetSensorRadius * _sightRange))
         {
-            Debug.Log(hit.collider.gameObject.name);
             return hit.collider == other;
         }
 
