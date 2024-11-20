@@ -6,7 +6,7 @@ namespace BetterFSM
 {
     public class Death : StateBase
     {
-        [SerializeField] private Animator _anim;
+        /*[SerializeField] private Animator _anim;
 
         public AudioClip deathSound;
         public AudioSource audioSource;
@@ -14,13 +14,13 @@ namespace BetterFSM
         private void Start()
         {
             _anim = GetComponent<Animator>();
-        }
+        }*/
 
         public override StateType GetStateType { get { return StateType.Death; } }
 
         public override NavMeshAgent GetAgent { get { return _myAgent.GetNavAgent; } }
 
-        public override void OnStateEnter()
+        /*public override void OnStateEnter()
         {
             _anim.SetBool("isWalking", false);
             _anim.SetBool("IsAttacking", false);
@@ -38,7 +38,16 @@ namespace BetterFSM
         {
             yield return new WaitForSeconds(1.5f);
             Destroy(this.gameObject);
+        }*/
+
+        public override void OnStateEnter()
+        {
+            gameObject.SetActive(false);
         }
 
+        public override StateType OnStateUpdate()
+        {
+            return GetStateType;
+        }
     }
 }
