@@ -17,6 +17,7 @@ public class WeaponManager : MonoBehaviour
     AimStateManager _aim;
 
     [SerializeField] AudioClip _gunShot;
+    [SerializeField] private LayerMask _layerMask;
     AudioSource _audioSource;
     WeaponAmmo _ammo;
     ActionStateManager _actions;
@@ -36,7 +37,7 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ShouldFire()) Fire();
+        if (ShouldFire() && _aim.currentState == _aim.aim) Fire();
     }
 
     private bool ShouldFire()
@@ -79,6 +80,15 @@ public class WeaponManager : MonoBehaviour
             GameObject curBullet = Instantiate(_bullet, _barrelPos.position, _barrelPos.rotation);
             Rigidbody rb = curBullet.GetComponent<Rigidbody>();
             rb.AddForce(_barrelPos.forward * _bulletVelocity, ForceMode.Impulse);
+        }
+
+        Camera camera = Camera.main;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _layerMask))
+        {
+            Debug.Log(hit.transform.gameObject.name);
+            hit.transform.gameObject.GetComponent<IDamageable>()?.TakeDamage(2);
         }
     }
 }

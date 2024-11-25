@@ -1,4 +1,6 @@
+using UnityEngine;
+
 public interface IInteractable
 {
-    void Pickup();
+    void Pickup(GameObject interactor);
 }
