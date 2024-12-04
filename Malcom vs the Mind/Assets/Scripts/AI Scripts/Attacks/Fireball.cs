@@ -14,6 +14,7 @@ public class Fireball : MonoBehaviour
         if(other.CompareTag("Enemy") == false)
         {
             other.GetComponent<IDamageable>()?.TakeDamage(2);
+            Destroy(gameObject);
         }
     }
 

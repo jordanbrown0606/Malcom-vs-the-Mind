@@ -13,6 +13,12 @@ public class PageScript : MonoBehaviour, IInteractable
         Cursor.visible = true;
         interactor.SetActive(false);
         _crosshair.SetActive(false);
+        GameManager.instance.hasNote = true;
+    }
+
+    private void Start()
+    {
+        GameManager.instance.hasNote = false;
     }
 
     private void OnDisable()

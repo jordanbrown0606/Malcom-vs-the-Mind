@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] LayerMask aimMask;
+    [SerializeField] private float _interactionDistance;
 
     // Update is called once per frame
     void Update()
@@ -12,7 +13,7 @@ public class PlayerInteraction : MonoBehaviour
         Vector2 screenCentre = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
         Ray ray = Camera.main.ScreenPointToRay(screenCentre);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, _interactionDistance, aimMask))
         {
             if(hit.transform.gameObject.GetComponent<IInteractable>() != null && Input.GetKeyDown(KeyCode.E))
             {
