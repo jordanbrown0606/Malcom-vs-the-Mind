@@ -142,7 +142,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9169081240243441239, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Left Elbow
+      value: joint15
       objectReference: {fileID: 0}
     - target: {fileID: -9169081240243441239, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -202,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7790723107119875270, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Right Elbow
+      value: joint18
       objectReference: {fileID: 0}
     - target: {fileID: -7790723107119875270, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2207446993959563702, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Base of Neck
+      value: joint11
       objectReference: {fileID: 0}
     - target: {fileID: -2207446993959563702, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -987083224660369299, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Top of Neck
+      value: joint12
       objectReference: {fileID: 0}
     - target: {fileID: -987083224660369299, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -354,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 211436575006471580, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Hip
+      value: joint9
       objectReference: {fileID: 0}
     - target: {fileID: 211436575006471580, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 49.711475
       objectReference: {fileID: 0}
+    - target: {fileID: 2236237030686087061, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9076b08a23ea56d4e9eaf0b29dc081d5, type: 2}
     - target: {fileID: 2359743829256272322, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -422,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828543736120685407, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Left Shoulder
+      value: joint14
       objectReference: {fileID: 0}
     - target: {fileID: 5828543736120685407, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -442,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696579456086237824, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Right Shoulder
+      value: joint17
       objectReference: {fileID: 0}
     - target: {fileID: 7696579456086237824, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
@@ -490,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9167048136575545302, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Name
-      value: Chest
+      value: joint10
       objectReference: {fileID: 0}
     - target: {fileID: 9167048136575545302, guid: e11c6f60ab337974fb753f7d005250bb, type: 3}
       propertyPath: m_Layer
