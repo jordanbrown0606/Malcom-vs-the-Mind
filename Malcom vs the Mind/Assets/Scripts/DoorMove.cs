@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorMove : MonoBehaviour
 {
     [SerializeField] private Transform _movePosition;
-    [SerializeField] private int _speed;
+    [SerializeField] private float _speed;
 
     // Update is called once per frame
     void Update()

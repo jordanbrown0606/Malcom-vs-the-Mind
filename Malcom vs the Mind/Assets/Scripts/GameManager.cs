@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool hasNote;
+    public bool angerKey;
 
     // Start is called before the first frame update
     private void Awake()
