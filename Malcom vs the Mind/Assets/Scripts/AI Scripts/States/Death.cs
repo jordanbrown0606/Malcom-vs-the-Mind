@@ -37,7 +37,7 @@ namespace BetterFSM
         public IEnumerator DeleteBody()
         {
             yield return new WaitForSeconds(1.5f);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }*/
 
         public override void OnStateEnter()

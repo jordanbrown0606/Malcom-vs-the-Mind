@@ -110,6 +110,7 @@ MonoBehaviour:
   _attackRange: 4
   _attackSpeed: 2
   _fireballPrefab: {fileID: 5604571537580957290, guid: 1bc3467183090124ca677c3ae3b8a6be, type: 3}
+  _attackFrequency: 1.5
 --- !u!114 &7447567468311563155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2101018652025763398, guid: 0a52a047f04a42a479798d4f8a462c08, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b08bf2cb91c75d4e895547ce855a0ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

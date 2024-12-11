@@ -165,7 +165,6 @@ public class Agent : MonoBehaviour, IDamageable
     private void Die()
     {
         Transition(StateType.Death);
-        //Destroy(gameObject);
     }
 
     /// <summary>

@@ -3334,7 +3334,7 @@ MonoBehaviour:
   _barrelPos: {fileID: 7807583111890688298}
   _bulletVelocity: 500
   _bulletsPerShot: 1
-  _gunShot: {fileID: 8300000, guid: 85ddd2e710f5508408c31a52db7cc466, type: 3}
+  _gunShot: {fileID: 8300000, guid: 4248262e7a1b4f549b3b8fb41ebbdff9, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 512

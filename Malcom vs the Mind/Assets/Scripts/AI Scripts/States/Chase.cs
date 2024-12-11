@@ -15,6 +15,11 @@ namespace BetterFSM
         [SerializeField] private float _chasingSpeed;
         [SerializeField] private float _attackRange;
 
+        public override void OnStateEnter()
+        {
+            _myAgent.GetComponent<NavMeshAgent>().speed = _chasingSpeed;
+        }
+
         public override StateType OnStateUpdate()
         {
             if (_myAgent.target == null)

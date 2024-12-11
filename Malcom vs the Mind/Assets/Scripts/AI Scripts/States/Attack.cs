@@ -8,12 +8,18 @@ namespace BetterFSM
         [SerializeField] private float _attackRange;
         [SerializeField] private float _attackSpeed;
         [SerializeField] private GameObject _fireballPrefab;
+        [SerializeField] private float _attackFrequency;
 
-        private float _timeSinceLastAttack = 1.5f;
+        private float _timeSinceLastAttack;
 
         public override StateType GetStateType {  get { return StateType.Attack; } }
 
         public override NavMeshAgent GetAgent { get { return _myAgent.GetNavAgent; } }
+
+        private void Start()
+        {
+            _timeSinceLastAttack = _attackFrequency;
+        }
 
         public override void OnStateEnter()
         {
@@ -33,7 +39,7 @@ namespace BetterFSM
                 if(_timeSinceLastAttack <= 0)
                 {
                     InitiateAttack();
-                    _timeSinceLastAttack = 1.5f;
+                    _timeSinceLastAttack = _attackFrequency;
                 }
             }
 
