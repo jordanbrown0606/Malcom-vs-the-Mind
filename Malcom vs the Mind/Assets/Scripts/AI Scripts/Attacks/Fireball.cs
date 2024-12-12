@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    private AudioSource _source;
+
     private void Start()
     {
         GetComponent<Collider>().isTrigger = true;
+        _source = GetComponent<AudioSource>();
+        _source.Play();
     }
 
     private void OnTriggerEnter(Collider other)

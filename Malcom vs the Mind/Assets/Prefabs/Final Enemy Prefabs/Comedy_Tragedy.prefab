@@ -52,7 +52,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8972166000901085620
 MonoBehaviour:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myAgent: {fileID: 0}
-  _attackRange: 8
+  _attackRange: 14
 --- !u!114 &4022100047258835568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myAgent: {fileID: 0}
-  _attackRange: 4
+  _attackRange: 14
   _attackSpeed: 2
   _fireballPrefab: {fileID: 5604571537580957290, guid: 1bc3467183090124ca677c3ae3b8a6be, type: 3}
   _attackFrequency: 1

@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myAgent: {fileID: 0}
-  _attackRange: 4
+  _attackRange: 8
   _attackSpeed: 2
   _fireballPrefab: {fileID: 5604571537580957290, guid: 1bc3467183090124ca677c3ae3b8a6be, type: 3}
   _attackFrequency: 1.5
