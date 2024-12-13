@@ -12783,6 +12783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasNote: 0
+  angerKey: 0
 --- !u!4 &732083504
 Transform:
   m_ObjectHideFlags: 0
@@ -19370,6 +19371,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4418166609984372429, guid: 5bf22fdc784e1354eb06a7f7629f377a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1940427870}
     - target: {fileID: 5863770500524271961, guid: 5bf22fdc784e1354eb06a7f7629f377a, type: 3}
       propertyPath: m_Name
       value: Ammo Canvas
@@ -33910,6 +33915,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &1940427870 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 400294314815341537, guid: 2f985ac5055a2a44daea0e800aa6e3d1, type: 3}
+  m_PrefabInstance: {fileID: 1313607914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1955885466
 Mesh:
   m_ObjectHideFlags: 0
