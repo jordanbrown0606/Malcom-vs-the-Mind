@@ -30,7 +30,8 @@ public class AudioManager : MonoBehaviour
     {
         _source.Stop();
         _source.loop = true;
-        _source.PlayOneShot(clip);
+        _source.clip = clip;
+        _source.Play();
 
     }
 }
