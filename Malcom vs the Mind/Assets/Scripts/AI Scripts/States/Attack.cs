@@ -28,9 +28,13 @@ namespace BetterFSM
 
         public override StateType OnStateUpdate()
         {
-            if (_myAgent.target == null)
+            if (_myAgent.target == null && _myAgent.GetComponent<Idle>() != null)
             {
                 return StateType.Idle;
+            }
+            else if(Vector3.Distance(_myAgent.transform.position, _myAgent.target.position) > _attackRange && _myAgent.GetComponent<Chase>() != null)
+            {
+                return StateType.Chase;
             }
             else
             {
